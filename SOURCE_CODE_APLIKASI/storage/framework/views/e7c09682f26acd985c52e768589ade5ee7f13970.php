@@ -1,0 +1,207 @@
+<?php $__env->startSection('content'); ?>
+<div class="main-content-container container-fluid p-4">
+    <div class="row">
+        <div class="col-md">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md">
+                            <h5>Data Anak</h5>
+                        </div>
+                        <div class="col-md text-right">
+                            <a class="btn btn-primary" href="<?php echo e(Route('admin.laporan.anak')); ?>" target="_blank"><i
+                                    class="material-icons">print</i> Cetak Data</a>
+                            <button type="button" class="btn btn-success" data-toggle="modal"
+                                data-target=".bd-example-modal-lg">+ Tambah Data</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>ID Anak</th>
+                                <th>Nama</th>
+                                <th>Alamat</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Tempat, Tanggal Lahir</th>
+                                <th>No Hp</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $d): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <tr>
+                                <td><?php echo e($loop->iteration); ?></td>
+                                <td>A - <?php echo e($d->anak_id); ?></td>
+                                <td><?php echo e($d->nama_anak); ?></td>
+                                <td><?php echo e($d->alamat); ?></td>
+                                <td><?php echo e($d->jk); ?></td>
+                                <td><?php echo e($d->tempat_lahir); ?>, <?php echo e(carbon\carbon::parse($d->tanggal_lahir)->format('d F Y')); ?>
+
+                                </td>
+                                <td><?php echo e($d->no_hp); ?></td>
+                                <td class="text-center">
+                                    <a class="btn btn-rounded btn-success"
+                                        href="<?php echo e(Route('admin.anak.show',['uuid'=>$d->anak_id])); ?>"><i
+                                            class="material-icons">info</i></a>
+                                    <a class="btn btn-rounded btn-primary"
+                                        href="<?php echo e(Route('admin.anak.edit',['uuid'=>$d->anak_id])); ?>"><i
+                                            class="material-icons">edit</i></a>
+                                    <a href="<?php echo e(Route('admin.anak.destroy',['uuid'=>$d->anak_id])); ?>"
+                                        class="btn btn-secondary"
+                                        onclick="return confirm('Apa anda yakin ingin menghapus data?')"><i
+                                            class="material-icons">delete</i></a>
+                                </td>
+                            </tr>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?php echo e(Route('admin.anak.store')); ?>" method="POST">
+                <?php echo csrf_field(); ?>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <label for="">Nama Anak</label>
+                        <div class="input-group input-group-seamless">
+                            <span class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons">person</i>
+                                </span>
+                            </span>
+                            <input type="text" name="nama_anak" class="form-control" id="form1-username"
+                                placeholder="Nama Anak" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Alamat</label>
+                        <textarea name="alamat" id="" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Jenis Kelamin</label>
+                        <div class="form-inline">
+                            <div class="custom-control custom-radio mb-1 mr-3">
+                                <input type="radio" id="formsRadioDefault1" name="jk" value="Laki-laki"
+                                    class="custom-control-input" checked>
+                                <label class="custom-control-label" for="formsRadioDefault1">Laki -laki</label>
+                            </div>
+                            <div class="custom-control custom-radio mb-1">
+                                <input type="radio" id="formsRadioDefault2" name="jk" value="Perempuan"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="formsRadioDefault2">Perempuan</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="input-group mb-3">
+                                <label for="">Tempat lahir</label>
+                                <div class="input-group input-group-seamless">
+                                    <span class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">location_on</i>
+                                        </span>
+                                    </span>
+                                    <input type="text" name="tempat_lahir" class="form-control" id="form1-username"
+                                        placeholder="Kota..." required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-group">
+                                <label for="">Tanggal Lahir</label>
+                                <input class="form-control" name="tanggal_lahir" type="date" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="input-group mb-3">
+                                <label for="">Nama Ibu</label>
+                                <div class="input-group input-group-seamless">
+                                    <span class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">person</i>
+                                        </span>
+                                    </span>
+                                    <input type="text" name="nama_ibu" class="form-control" id="form1-username"
+                                        placeholder="Nama Ibu" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="input-group mb-3">
+                                <label for="">Nama Ayah</label>
+                                <div class="input-group input-group-seamless">
+                                    <span class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="material-icons">person</i>
+                                        </span>
+                                    </span>
+                                    <input type="text" name="nama_ayah" class="form-control" id="form1-username"
+                                        placeholder="Nama Ayah" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="">No Hp</label>
+                        <div class="input-group input-group-seamless">
+                            <span class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons">phone</i>
+                                </span>
+                            </span>
+                            <input type="text" name="no_hp" class="form-control" id="form1-username" maxlength="14"
+                                required>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label for="">Nama Kelurahan</label>
+                        <div class="input-group input-group-seamless">
+                            <span class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="material-icons">location_on</i>
+                                </span>
+                            </span>
+                            <input type="text" name="nama_kelurahan" class="form-control" id="form1-username" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
+                            class="material-icons">close</i>
+                        Batal</button>
+                    <button type="submit" class="btn btn-primary"><i class="material-icons">save</i> Simpan
+                        Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+<script>
+    $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+</script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH H:\KATALOG_PWA_LARAVEL\ID337C - PosyanduCare - Aplikasi Posyandu Timbangan Balita Dan Jadwal Imunisasi\SOURCE_CODE_APLIKASI\resources\views/admin/anak/index.blade.php ENDPATH**/ ?>
