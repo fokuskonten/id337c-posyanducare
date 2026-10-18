@@ -1,0 +1,26 @@
+{
+  "name": "PosyanduCare - Aplikasi Posyandu Timbangan Balita Dan Jadwal Imunisasi",
+  "short_name": "PosyanduCare",
+  "description": "Aplikasi Posyandu Timbangan Balita Dan Jadwal Imunisasi",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0284c7",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

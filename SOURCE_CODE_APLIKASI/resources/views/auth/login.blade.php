@@ -2,12 +2,14 @@
 <html class="no-js h-100" lang="en">
 
 <head>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shards Dashboard Lite - Free Bootstrap Admin Template – DesignRevision</title>
+    <title>PosyanduCare - Login Portal Resmi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-icon.png') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
     <link href="{{asset('asset_template/styles/all.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -23,26 +25,19 @@
     <div class="container p-4">
         <br>
         <br>
-        <br>
-        <br>
         <div class="row">
-            <div class="col-md ml-md-auto">
-                <div class="card card-small ">
-                    <div class="card-body text-center">
-                        <img id="main-logo" class="d-inline-block align-top" style="max-width:175px;"
-                            src="{{asset('asset_template/images/logo.png')}}" alt="Shards Dashboard">
+            <div class="col-md-6 ml-md-auto mr-md-auto">
+                <div class="card card-small shadow-sm border-0">
+                    <div class="card-body text-center p-4">
+                        <img id="main-logo" class="d-inline-block align-top" style="max-width:130px; margin-bottom: 12px;"
+                            src="{{asset('logo.png')}}" alt="PosyanduCare Logo">
                         <br>
-                        <h5 class="card-title">
-                            <a class="text-fiord-blue" href="#">Rancang Bangun Aplikasi Manajemen Imunisasi Pada
-                                PosyanduCare Berbasis Web</a>
-                        </h5>
-                        <p class="card-text d-inline-block mb-3">Silahkan login menggunakan username dan passwrod untuk
-                            mengakse aplikasi</p>
-                        <br>
+                        <h5 class="card-title font-weight-bold" style="color: #0284c7;">PosyanduCare</h5>
+                        <p class="card-text text-muted mb-4 font-14">Sistem Manajemen Timbangan Balita & Jadwal Imunisasi Terpadu</p>
                         <form action="{{ route('loginPost') }}" method="POST">
                             @csrf
-                            <div class="input-group mb-3">
-                                <label for="">Username</label>
+                            <div class="input-group mb-3 text-left">
+                                <label class="w-100 font-weight-bold" style="font-size: 13px;">Username</label>
                                 <div class="input-group input-group-seamless">
                                     <span class="input-group-prepend">
                                         <span class="input-group-text">
@@ -50,19 +45,19 @@
                                         </span>
                                     </span>
                                     <input type="text" name="username" value="{{ old('username') }}"
-                                        class="form-control" id="form1-username" placeholder="Username" required>
+                                        class="form-control" id="form1-username" placeholder="Masukkan username" autocomplete="username" required autofocus>
                                 </div>
                             </div>
-                            <div class="input-group mb-3">
-                                <label for="">Password</label>
+                            <div class="input-group mb-3 text-left">
+                                <label class="w-100 font-weight-bold" style="font-size: 13px;">Password</label>
                                 <div class="input-group input-group-seamless">
                                     <span class="input-group-prepend">
                                         <span class="input-group-text">
-                                            <i class="material-icons">password</i>
+                                            <i class="material-icons">lock</i>
                                         </span>
                                     </span>
-                                    <input type="password" name="password" class="form-control" id="form1-username"
-                                        placeholder="Password" required>
+                                    <input type="password" name="password" class="form-control" id="form1-password"
+                                        placeholder="Masukkan kata sandi" autocomplete="current-password" required>
                                 </div>
                             </div>
                             <div class="text-right">

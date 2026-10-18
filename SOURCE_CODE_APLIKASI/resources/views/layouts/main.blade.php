@@ -2,12 +2,14 @@
 <html class="no-js h-100" lang="en">
 
 <head>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Manajemen Imunisasi</title>
+  <title>PosyanduCare - Aplikasi Posyandu Timbangan Balita Dan Jadwal Imunisasi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-icon.png') }}">
+  <link rel="manifest" href="{{ asset('manifest.json') }}">
   <link href="{{asset('asset_template/styles/all.css')}}" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -26,11 +28,11 @@
       <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
         <div class="main-navbar">
           <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
-            <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 30px;">
+            <a class="navbar-brand w-100 mr-0" href="{{route('admin.beranda')}}" style="line-height: 30px;">
               <div class="d-table m-auto">
-                <img id="main-logo" class="d-inline-block align-top" style="max-width: 45px;"
-                  src="{{asset('asset_template/images/logo.png')}}" alt="Shards Dashboard">
-                <span class="d-none d-md-inline mt-1">Manajemen Imunisasi</span>
+                <img id="main-logo" class="d-inline-block align-top" style="max-width: 36px; margin-right: 6px;"
+                  src="{{asset('logo.png')}}" alt="PosyanduCare Logo">
+                <span class="d-none d-md-inline mt-1 font-weight-bold" style="color: #0284c7;">PosyanduCare</span>
               </div>
             </a>
             <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">

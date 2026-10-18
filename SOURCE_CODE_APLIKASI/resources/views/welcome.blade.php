@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Aplikasi manajemen Aplikasi</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>PosyanduCare - Aplikasi Posyandu Timbangan Balita Dan Jadwal Imunisasi</title>
+  <meta content="Aplikasi Posyandu Timbangan Balita Dan Jadwal Imunisasi" name="description">
+  <meta content="posyandu, imunisasi, balita, kesehatan anak" name="keywords">
 
-  <!-- Favicons -->
-  <link href="{{asset('template_depan/assets/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('template_depan/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <!-- Favicons & Manifest -->
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon.png') }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-icon.png') }}">
+  <link rel="manifest" href="{{ asset('manifest.json') }}">
 
   <!-- Google Fonts -->
   <link
@@ -174,14 +174,10 @@
 
       <div class="mr-md-auto text-center text-md-left">
         <div class="copyright">
-          &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
+          &copy; Copyright 2026 <strong><span>PosyanduCare</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Sistem Informasi Posyandu & Imunisasi Balita didukung oleh <a href="https://fokuskonten.my.id/" target="_blank" style="color: #0284c7; font-weight: 600;">FokusKonten</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
